@@ -1,5 +1,7 @@
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/spliit?utm_campaign=spliit)
 
+![Spliit group expenses view](https://raw.githubusercontent.com/mc9max/spliit/main/assets/spliit-ui.png)
+
 # Deploy and Host
 
 Spliit is a free, open-source alternative to Splitwise: share expenses

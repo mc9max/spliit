@@ -7,6 +7,8 @@ group, add expenses, and share the link.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/spliit?utm_campaign=spliit)
 
+![Spliit group expenses view](assets/spliit-ui.png)
+
 ## Deploy and Host
 
 Deploy it on Railway in one click: two services (the Spliit app plus a
