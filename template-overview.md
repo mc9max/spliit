@@ -64,9 +64,10 @@ thing that adds an OpenAI-compatible API key.
 
 The deploy form is zero-field. Auto-wired: `SPLIIT_DB_HOST`
 (`${{postgres.RAILWAY_PRIVATE_DOMAIN}}`), `SPLIIT_DB_PASSWORD`
-(`${{postgres.POSTGRES_PASSWORD}}`), `BASE_URL`
-(`https://${{RAILWAY_PUBLIC_DOMAIN}}`), and the companion's
+(`${{postgres.POSTGRES_PASSWORD}}`), and the companion's
 `POSTGRES_PASSWORD` (`${{secret(32)}}`; user/db `spliit` baked in).
+`BASE_URL` is derived at boot from the Railway public domain, not a
+deploy-form field.
 Optional upstream features, all off by default:
 `DEFAULT_CURRENCY_CODE` (default `USD`), `ENABLE_GROUP_DELETION` +
 `CRON_SECRET` (scheduled purge endpoint), `ENABLE_EXPENSE_DOCUMENTS`

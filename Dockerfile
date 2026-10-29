@@ -24,11 +24,13 @@
 #   them in shell, with user/db/port baked as constants.
 # - BASE_URL is a runtime override in Spliit (src/lib/env.ts): the
 #   prebuilt image can be told where it is reachable without a rebuild.
-#   The template sets it to https://${{RAILWAY_PUBLIC_DOMAIN}}; the
-#   entrypoint derives the same value as a fallback so a deploy without
-#   the variable still builds correct metadata links. (Same-domain
-#   server actions pass Next.js's origin check on Host match alone, so
-#   group/expense creation works even before BASE_URL resolves.)
+#   It is deliberately NOT a template variable: a
+#   https://${{RAILWAY_PUBLIC_DOMAIN}} value resolved to a bare `https://`
+#   in e2e (proven 2026-10-29: every page render crashed with a Zod
+#   "Invalid URL" error), so the entrypoint derives BASE_URL at boot
+#   from the live RAILWAY_PUBLIC_DOMAIN instead. (Same-domain server
+#   actions pass Next.js's origin check on Host match alone, so
+#   group/expense creation works regardless.)
 # - No Docker HEALTHCHECK: the Alpine base has no curl/wget; Railway's
 #   external healthcheckPath (/api/health/readiness, a public,
 #   unauthenticated endpoint that checks the database) covers it.

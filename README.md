@@ -41,7 +41,7 @@ anyone real.
 ## Configuration
 
 Every variable the deployment consumes. The one-click deploy form is
-zero-field: the three wired variables below are filled automatically,
+zero-field: the two wired variables below are filled automatically,
 and the optional upstream features stay off unless you set them after
 deploying.
 
@@ -49,7 +49,7 @@ deploying.
 |---|---|---|
 | `SPLIIT_DB_HOST` | `${{postgres.RAILWAY_PRIVATE_DOMAIN}}` | Postgres host over the private network (auto-wired). |
 | `SPLIIT_DB_PASSWORD` | `${{postgres.POSTGRES_PASSWORD}}` | Postgres password (auto-wired from the companion). |
-| `BASE_URL` | `https://${{RAILWAY_PUBLIC_DOMAIN}}` | Public URL of this deployment, used for metadata links. |
+| `BASE_URL` | _(derived at boot)_ | Public URL of this deployment, used for metadata links. The entrypoint derives it from `RAILWAY_PUBLIC_DOMAIN` — it is not a deploy-form field, because a variable value of `https://${{RAILWAY_PUBLIC_DOMAIN}}` resolved to a bare `https://` in testing and crashed page renders. |
 | `DEFAULT_CURRENCY_CODE` | `USD` | Currency pre-selected on the new-group form (e.g. `EUR`, `CAD`). |
 | `ENABLE_GROUP_DELETION` | `false` | Allow deleting groups (needs a scheduled call to `/api/cron/purge-deleted-groups` with `CRON_SECRET`). |
 | `CRON_SECRET` | _(unset)_ | Secret protecting the group-purge cron endpoint. |
