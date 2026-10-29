@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  <!-- A bill split two ways: one circle, two shares -->
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#22c55e" stroke-width="34"/>
+  <path d="M256 106 L256 406" stroke="#0f172a" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="181" cy="256" r="52" fill="#22c55e"/>
+  <circle cx="331" cy="256" r="52" fill="#f8fafc"/>
+  <text x="181" y="272" font-family="Arial, sans-serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#0f172a">$</text>
+  <text x="331" y="272" font-family="Arial, sans-serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#0f172a">$</text>
+</svg>
